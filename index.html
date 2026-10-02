@@ -213,7 +213,30 @@
       font-weight: 800;
       margin-bottom: 12px;
     }
+.product-details {
+  margin: 15px 0 18px;
+  border-top: 1px solid #eeeeee;
+}
 
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 13px;
+}
+
+.detail-row strong {
+  color: #111;
+  flex-shrink: 0;
+}
+
+.detail-row span {
+  color: #666;
+  text-align: right;
+  line-height: 1.4;
+}
     .size-select {
       width: 100%;
       padding: 10px;
@@ -462,7 +485,39 @@
           <h3>JORE Essential Tee</h3>
 
           <div class="price">₹699</div>
+<p class="product-description">
+  A clean everyday streetwear essential designed for comfort and effortless style.
+  Made for those who wear their vibe and stand out without trying too hard.
+</p>
 
+<div class="product-details">
+
+  <div class="detail-row">
+    <strong>Material</strong>
+    <span>100% Cotton</span>
+  </div>
+
+  <div class="detail-row">
+    <strong>Fit</strong>
+    <span>Regular Fit</span>
+  </div>
+
+  <div class="detail-row">
+    <strong>Available Sizes</strong>
+    <span>S, M, L, XL, XXL</span>
+  </div>
+
+  <div class="detail-row">
+    <strong>Washing Instructions</strong>
+    <span>Machine wash cold. Wash inside out. Do not bleach.</span>
+  </div>
+
+  <div class="detail-row">
+    <strong>Shipping</strong>
+    <span>Delivered across India. Shipping charges calculated at checkout.</span>
+  </div>
+
+</div>
           <select class="size-select" id="size1">
             <option value="S">Size S</option>
             <option value="M">Size M</option>
