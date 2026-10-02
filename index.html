@@ -145,6 +145,46 @@
       background: #e9e9e9;
       overflow: hidden;
     }
+    .product-gallery {
+  height: 260px;
+  position: relative;
+  background: #e9e9e9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.gallery-btn.prev {
+  left: 10px;
+}
+
+.gallery-btn.next {
+  right: 10px;
+}
 
     .product-image img {
       width: 100%;
@@ -541,7 +581,30 @@
   <script>
 
     let cart = [];
+const tshirtImages = [
+  "Picsart_26-05-06_20-16-30-233.jpg",
+  "Picsart_26-05-06_20-14-05-982.jpg",
+  "Picsart_26-05-06_20-17-29-614.jpg",
+  "Picsart_26-05-06_20-18-15-789.jpg",
+  "Picsart_26-05-06_20-19-14-692.jpg"
+];
 
+let tshirtImageIndex = 0;
+
+function changeTshirtImage(direction) {
+  tshirtImageIndex += direction;
+
+  if (tshirtImageIndex < 0) {
+    tshirtImageIndex = tshirtImages.length - 1;
+  }
+
+  if (tshirtImageIndex >= tshirtImages.length) {
+    tshirtImageIndex = 0;
+  }
+
+  document.getElementById("tshirtMainImage").src =
+    tshirtImages[tshirtImageIndex];
+}
     function addToCart(name, price, sizeId) {
 
       const size = document.getElementById(sizeId).value;
