@@ -660,6 +660,28 @@ function changeTshirtImage(direction) {
   document.getElementById("tshirtMainImage").src =
     tshirtImages[tshirtImageIndex];
 }
+    let touchStartX = 0;
+let touchEndX = 0;
+
+const tshirtGallery = document.querySelector(".product-gallery");
+
+tshirtGallery.addEventListener("touchstart", function(event) {
+  touchStartX = event.changedTouches[0].screenX;
+});
+
+tshirtGallery.addEventListener("touchend", function(event) {
+  touchEndX = event.changedTouches[0].screenX;
+
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (Math.abs(swipeDistance) > 50) {
+    if (swipeDistance < 0) {
+      changeTshirtImage(1);
+    } else {
+      changeTshirtImage(-1);
+    }
+  }
+});
     function addToCart(name, price, sizeId) {
 
       const size = document.getElementById(sizeId).value;
