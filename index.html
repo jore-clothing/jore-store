@@ -399,12 +399,23 @@
       <!-- PRODUCT 1 -->
       <div class="product">
 
-        <div class="product-image">
-          <img
-            src="image/tshirt1.jpg"
-            alt="JORE Essential Tee"
-          >
-        </div>
+        <div class="product-gallery">
+
+  <button class="gallery-btn prev" onclick="changeTshirtImage(-1)">
+    ‹
+  </button>
+
+  <img
+    id="tshirtMainImage"
+    src="Picsart_26-05-06_20-16-30-233.jpg"
+    alt="JORE Essential Tee"
+  >
+
+  <button class="gallery-btn next" onclick="changeTshirtImage(1)">
+    ›
+  </button>
+
+</div>
 
         <div class="product-info">
 
